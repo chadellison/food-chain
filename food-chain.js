@@ -30,7 +30,7 @@ FoodChain.prototype.verse = function(verse) {
 }
 
 FoodChain.prototype.verses = function(start, end) {
-  return this.verse(start) +'\n' + this.verse(end) + '\n' 
+  return this.verse(start) +'\n' + this.verse(end) + '\n'
 }
 
 var verseOne = function() {
@@ -46,45 +46,35 @@ var verseThree = function() {
   return 'I know an old lady who swallowed a bird.\n' +
     'How absurd to swallow a bird!\n' +
     'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-    'She swallowed the spider to catch the fly.\n'
+    verseTwo().split('\n')[2] + '\n'
 }
 
 var verseFour = function() {
   return 'I know an old lady who swallowed a cat.\n' +
     'Imagine that, to swallow a cat!\n' +
     'She swallowed the cat to catch the bird.\n' +
-    'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-    'She swallowed the spider to catch the fly.\n'
+    verseThree().split('\n').slice(2, 4).join('\n') + '\n'
 }
 
 var verseFive = function() {
   return 'I know an old lady who swallowed a dog.\n' +
     'What a hog, to swallow a dog!\n' +
     'She swallowed the dog to catch the cat.\n' +
-    'She swallowed the cat to catch the bird.\n' +
-    'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-    'She swallowed the spider to catch the fly.\n'
+    verseFour().split('\n').slice(2, 5).join('\n') + '\n'
 }
 
 var verseSix = function() {
   return 'I know an old lady who swallowed a goat.\n' +
     'Just opened her throat and swallowed a goat!\n' +
     'She swallowed the goat to catch the dog.\n' +
-    'She swallowed the dog to catch the cat.\n' +
-    'She swallowed the cat to catch the bird.\n' +
-    'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-    'She swallowed the spider to catch the fly.\n'
+    verseFive().split('\n').slice(2, 6).join('\n') + '\n'
 }
 
 var verseSeven = function() {
   return 'I know an old lady who swallowed a cow.\n' +
     'I don\'t know how she swallowed a cow!\n' +
     'She swallowed the cow to catch the goat.\n' +
-    'She swallowed the goat to catch the dog.\n' +
-    'She swallowed the dog to catch the cat.\n' +
-    'She swallowed the cat to catch the bird.\n' +
-    'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-    'She swallowed the spider to catch the fly.\n'
+    verseSix().split('\n').slice(2, 7).join('\n') + '\n'
 }
 
 var verseEight = function() {
